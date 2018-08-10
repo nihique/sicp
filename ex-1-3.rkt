@@ -1,9 +1,11 @@
 #lang sicp
 
 (define (sum-of-squares-of-2-larger-numbers a b c) 
-  (+ (square (get-first-largest-number a b c))
-     (square (get-second-largest-number a b c))))
+  (sum-of-squares
+   (get-first-largest-number a b c)
+   (get-second-largest-number a b c)))
 
+(define (sum-of-squares a b) (+ (square a) (square b)))
 
 (define (get-first-largest-number a b c) 
   (cond ((and (>= a b) (>= a c)) a)
